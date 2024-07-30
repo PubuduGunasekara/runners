@@ -2,6 +2,7 @@ package com.runners.runners;
 
 import com.runners.runners.run.Location;
 import com.runners.runners.run.Run;
+import com.runners.runners.run.RunRepository;
 import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,12 +23,12 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	@Bean
-	CommandLineRunner runner(){
-		return args -> {
-			Run run = new Run(1, "First Run", LocalDateTime.now(), LocalDateTime.now(), 3, Location.OUTDOOR);
-			log.info("RUN: "+run);
-			};
-	}
+//	@Bean
+//	CommandLineRunner runner(RunRepository runRepository){
+//		return args -> {
+//			Run run = new Run(1, "First Run", LocalDateTime.now(), LocalDateTime.now(), 3, Location.OUTDOOR);
+//			runRepository.create(run);
+//			};
+//	}
 
 }
